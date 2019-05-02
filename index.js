@@ -6,6 +6,13 @@ function setupEnvironment(env) {
 }
 exports.setupEnvironment = setupEnvironment;
 function Debug() {
+    var flag;
+    if (environment) {
+        flag = environment.production;
+    }
+    else if (process && process.env.NODE_ENV === "production") {
+        flag = true;
+    }
     return function (target, propertyKey, descriptor) {
         var method = descriptor.value;
         descriptor.value = function () {
@@ -13,7 +20,7 @@ function Debug() {
             for (var _i = 0; _i < arguments.length; _i++) {
                 args[_i] = arguments[_i];
             }
-            if (environment.production) {
+            if (flag) {
                 return;
             }
             method.apply(this, args);

@@ -1,7 +1,7 @@
 {
   "name": "ng-debug-decorator",
-  "version": "1.4.0",
-  "description": "Angular / Nodejs DEBUG Decorator",
+  "version": "1.6.0",
+  "description": "Angular and Node.js @Debug decorator to skip debug code in production mode.",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "files": [
     "index.js",
-    "sindex.d.ts"
+    "index.d.ts"
   ],
   "repository": {
     "type": "git",
